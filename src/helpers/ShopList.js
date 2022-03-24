@@ -5,6 +5,8 @@ import Vegan from "../assets/vegan.jpg";
 import Pineapple from "../assets/pineapple.jpg";
 import Expensive from "../assets/expensive.jpg";
 
+// add api call to grab all items from database rather than having them hardcoded, we currently have it hardcoded just for demonstration purposes
+
 export const ShopList = [
   {
     name: "Pepperoni Pizza",
