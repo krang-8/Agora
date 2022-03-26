@@ -4,7 +4,7 @@ function CartItem({ image, name, price, quantity }) {
   return (
     <div className="cartItem">
       <div style={{ backgroundImage: `url(${image})` }}>
-        <p> </p>
+        <br></br>
         <h1> {name} </h1>
         <p> ${price} </p>
         <p> {quantity}</p>

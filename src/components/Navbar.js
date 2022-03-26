@@ -4,7 +4,6 @@ import CartIcon from "../assets/carticon.png"
 import { Link } from "react-router-dom";
 import ReorderIcon from "@material-ui/icons/Reorder";
 import "../styles/Navbar.css";
-import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
 function Navbar() {
@@ -14,15 +13,6 @@ function Navbar() {
     setOpenLinks(!openLinks);
   };
 
-  const options = [
-    { value: 'one', label: 'One' },
-    { value: 'two', label: 'Two', className: 'myOptionClassName' },
-    { value: 'three', label: 'Three', className: 'myOptionClassName' },
-    { value: 'four', label: 'Four' },
-    { value: 'five', label: 'Five' },
-    { value: 'six', label: 'Six' },
-  ];
-  const defaultOption = options[0];
 
   return (
     <div className="navbar">

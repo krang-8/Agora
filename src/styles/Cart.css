@@ -26,6 +26,8 @@
   width: 600px;
   height: 150px;
   margin: 20px;
+  overflow: hidden;
+  white-space: nowrap;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 .cartItem:hover {
@@ -47,7 +49,6 @@
 .cartItem h1{
   position: relative;
   font-size: medium;
-  position: relative;
   margin-left: 260px;
 
 }

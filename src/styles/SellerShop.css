@@ -1,0 +1,98 @@
+.sellershop {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.sellershop .sellershopTitle {
+  font-family: sans-serif;
+  font-size: 60px;
+}
+
+.sellershopList {
+  width: auto;
+  height: auto;
+  display: table-row;
+  
+  place-items: center;
+}
+
+/* sellershop ITEM STYLING */
+
+.sellershopItem {
+  border-radius: 15px;
+  width: 60vw;
+  height: 200px;
+  margin: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+.sellershopItem:hover {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.sellershopItem div {
+  display: flex;
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sellershopItem div1 {
+  /* border-top-left-radius: 15px;
+  border-top-right-radius: 15px; */
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.sellershopItem h1{
+  position: relative;
+  font-size: medium;
+  margin-left: 20px;
+}
+.sellershopItem p {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .sellershopList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .sellershopList {
+    grid-template-columns: 1fr;
+  }
+}
+
+div button {
+  margin-top: 40px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  background-color: #121619;
+  color: whitesmoke;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+div input:focus,
+textarea:focus {
+  outline: none;
+}
+
+div label {
+  margin-top: 15px;
+  color: grey;
+}
