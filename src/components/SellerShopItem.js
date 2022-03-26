@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SellerShopItem({ image, name, itemID, price, stock }) {
   return (
@@ -15,24 +16,18 @@ function SellerShopItem({ image, name, itemID, price, stock }) {
           </div1>
           <div1>
             <div1>
-              <button name={name} type="submit">Update Item</button>
+              <Link to="/updateitem"><button name={name} type="submit">Update Item</button></Link>
               <br></br>
             </div1>
             <div2>
-              <button name={name} type="input">Update Stock</button>
+              <Link to="updatestock"><button name={name} type="input">Update Stock</button></Link>
+              
             </div2>
           </div1>
         </div>
       </div>
     </div>
-    // <div className="sellershopItem">
-    //   <div className="row">
-    //   <div className="columnleft">dsad</div>
-    //     <div className="columnright">asdas</div>
-    //   </div>
 
-    // </div>
-    // <h1>Hi</h1>
 
   );
 }

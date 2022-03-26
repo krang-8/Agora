@@ -34,6 +34,7 @@ export const SellerShopList = [
     price: 17.99,
     stock: 25,
   },
+  
   {
     name: "Pineapple Pizza",
     itemID: 23343,
