@@ -9,7 +9,6 @@ function SellerControl() {
     <div className="sellershop">
       <h1 className="sellershopTitle">Your SellerShop </h1>  
       <Link to="/addnewitem"><button type="submit">Add New Item</button></Link> 
-      
       <div className="sellershopList">
         {SellerShopList.map((SellershopItem, key) => {
           return (

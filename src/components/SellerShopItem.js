@@ -15,13 +15,14 @@ function SellerShopItem({ image, name, itemID, price, stock }) {
             <p> Stock: {stock} </p>
           </div1>
           <div1>
-            <div1>
-              <Link to="/updateitem"><button name={name} type="submit">Update Item</button></Link>
-              <br></br>
-            </div1>
             <div2>
-              <Link to="updatestock"><button name={name} type="input">Update Stock</button></Link>
-              
+              <Link to="/updateitem"><button name={name} type="submit">Update Item</button></Link>
+            </div2>
+            <div2>
+              <Link to="/updatestock"><button name={name} type="input">Update Stock</button></Link>
+            </div2>
+            <div2>
+              <Link to="/removeitem"><button name={name} type="input">Remove Item</button></Link>
             </div2>
           </div1>
         </div>

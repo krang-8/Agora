@@ -11,6 +11,10 @@ import UpdateItem from "./pages/UpdateItem"
 import UpdateStock from "./pages/UpdateStock"
 import AddNewItem from "./pages/AddNewItem"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Admin from "./pages/Admin"
+import AdminCustomer from "./pages/AdminCustomer";
+import AdminSeller from "./pages/AdminSeller";
+import AdminItems from "./pages/AdminItems";
 
 
 function App() {
@@ -28,6 +32,10 @@ function App() {
           <Route path="/updateitem" exact component={UpdateItem}/>
           <Route path="/updatestock" exact component={UpdateStock}/>
           <Route path="/addnewitem" exact component={AddNewItem}/>
+          <Route path="/admin" exact component={Admin}/>
+          <Route path="/admin/customer" exact component={AdminCustomer}/>
+          <Route path="/admin/seller" exact component={AdminSeller}/>
+          <Route path="/admin/items" exact component={AdminItems}/>
         </Switch>
         <Footer />
       </Router>
