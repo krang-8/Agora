@@ -2,14 +2,10 @@ import React, { useState } from "react";
 import Cart from "../assets/cart.png";
 import "../styles/SignIn.css";
 import { Link } from "react-router-dom";
-import ReorderIcon from "@material-ui/icons/Reorder";
 import "../styles/Navbar.css";
 
 function SignIn() {
-  const [openLinks, setOpenLinks] = useState(false);
-  const toggleNavbar = () => {
-    setOpenLinks(!openLinks);
-  };
+
   return (
     <div className="signin">
       <div
@@ -28,7 +24,7 @@ function SignIn() {
           <input name="password" placeholder="Enter password..." type="password" />
           <div className="rightSide">
             <div>
-            <Link to="/shop"> <button type="submit">Customer Sign In</button> </Link>
+            <Link to="/customerhome"> <button type="submit">Customer Sign In</button> </Link>
             <Link to="/additems"> <button type="submit">Seller Sign In</button> </Link>
             </div>
             

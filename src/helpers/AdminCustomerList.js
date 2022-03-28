@@ -1,6 +1,6 @@
 export const CustomerList = [
 {
-    name: "Luke",
+    name: "Adam",
     username: "Luke23343",
     password: "Pepperoni",
     BuyerID: "00001",
@@ -9,7 +9,7 @@ export const CustomerList = [
     Credits: 200,
   },
   {
-    name: "Luke",
+    name: "Mahmood",
     username: "Luke23343",
     password: "Pepperoni",
     BuyerID: "00001",
@@ -18,7 +18,7 @@ export const CustomerList = [
     Credits: 200,
   },
   {
-    name: "Luke",
+    name: "Eusa",
     username: "Luke23343",
     password: "Pepperoni",
     BuyerID: "00001",

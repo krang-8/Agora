@@ -10,7 +10,14 @@
     font-family: sans-serif;
     font-size: 60px;
   }
-  
+  .adminmain {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   
   .adminList {
     width: auto;
@@ -43,19 +50,20 @@
     height: 200px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
   }
+  
   
   .adminItem div1 {
     display:grid;
     width: 100%;
     height: 200px;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
   }
   
   .adminItem div2 {
-    width: 50%;
+    width: 60%;
     align-items: center;
   }
   .adminItem h1{
@@ -91,6 +99,16 @@
   }
   
   .admin button {
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: #121619;
+    color: whitesmoke;
+    font-size: 15px;
+    cursor: pointer;
+  }
+  .adminmain button {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 10px;

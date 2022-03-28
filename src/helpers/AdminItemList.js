@@ -1,53 +1,57 @@
-import Pepperoni from "../assets/pepperoni.jpg";
-import Margherita from "../assets/margherita.jpg";
-import PedroTechSpecial from "../assets/pedrotechspecial.jpg";
-import Vegan from "../assets/vegan.jpg";
-import Pineapple from "../assets/pineapple.jpg";
-import Expensive from "../assets/expensive.jpg";
+import OrangeJuice from "../assets/OrangeJuice.jpg"
+import Detergent from "../assets/Detergent.jpg"
+import Shampoo from "../assets/Shampoo.jpg";
+import VegPizza from "../assets/VegPizza.jpeg";
+import Speaker from "../assets/Speaker.jpg";
+import Monitor from "../assets/Monitor.jpg";
 
 export const ItemList = [
   {
-    name: "Pepperoni Pizza",
-    itemID: 23343,
-    image: Pepperoni,
+    name: "Orange Juice", 
+    image: OrangeJuice,
     price: 15.99,
-    stock: 50,
+    quantity : 2,
+    itemID : "00245",
+    stock: 25
   },
   {
-    name: "Margherita Pizza",
-    itemID: 23343,
-    image: Margherita,
+    name: "Detergent",
+    image: Detergent,
     price: 11.99,
-    stock: 25,
+    quantity : 2,
+    itemID : "00245",
+    stock: 25
   },
   {
-    name: "PedroTech Special Pizza",
-    itemID: 23343,
-    image: PedroTechSpecial,
+    name: "Shampoo",
+    image: Shampoo,
     price: 256.53,
-    stock: 25,
+    quantity : 2,
+    itemID : "00245",
+    stock: 25
   },
   {
-    name: "Vegan Pizza",
-    itemID: 23343,
-    image: Vegan,
+    name: "Veg Pizza",
+    image: VegPizza,
     price: 17.99,
-    stock: 25,
-  },
-  
-  {
-    name: "Pineapple Pizza",
-    itemID: 23343,
-    image: Pineapple,
-    price: 4.99,
-    stock: 25,
+    quantity : 2,
+    itemID : "00245",
+    stock: 25
   },
   {
-    name: "Very Expensive Pizza",
-    itemID: 23343,
-    image: Expensive,
+    name: "Speaker",
+    image: Speaker,
+    price: 400.99,
+    quantity : 2,
+    itemID : "00245",
+    stock: 25
+  },
+  {
+    name: "Monitor",
+    image: Monitor,
     price: 1997.99,
-    stock: 25,
+    quantity : 2,
+    itemID : "00245",
+    stock: 25
   },
 ];
-

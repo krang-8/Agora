@@ -1,6 +1,4 @@
-import React from 'react'
-import { useState } from 'react';
-  
+import React from 'react'  
 import { Link } from "react-router-dom";
 import "../styles/Admin.css";
 
@@ -9,12 +7,12 @@ function Admin() {
 
   return (
       
-    <div className="admin">
+    <div className="adminmain">
       <h1 className="adminTitle">Admin</h1>  
       <div5>
-      <Link to="/admin/customer"><button>Customer</button></Link>
-      <Link to="/admin/seller"><button>Seller</button></Link>
-      <Link to="/admin/items"><button>Item</button></Link>
+      <Link to="/admincustomer"><button>Customer</button></Link>
+      <Link to="/adminseller"><button>Seller</button></Link>
+      <Link to="/adminitems"><button>Item</button></Link>
       </div5>
     </div>
   )

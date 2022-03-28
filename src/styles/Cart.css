@@ -22,6 +22,7 @@
 /* cart ITEM STYLING */
 
 .cartItem {
+  display: flex;
   border-radius: 15px;
   width: 600px;
   height: 150px;
@@ -43,25 +44,31 @@
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .cartItem h1{
   position: relative;
   font-size: medium;
-  margin-left: 260px;
+  margin-left: 20px;
 
 }
 .cartItem p {
-  font-size: small;
+  font-size: medium;
   position: relative;
-  margin-left: 260px;
+  margin-left: 20px;
 }
 
 @media only screen and (max-width: 1300px) {
   .cartList {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.cartItem button{
+  margin-left: 5px;
+  width: 40px;
+
 }
 
 @media only screen and (max-width: 800px) {

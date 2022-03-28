@@ -7,6 +7,7 @@ function Cart() {
     return (
         <div className="cart">
           <h1 className="cartTitle">Cart</h1>
+          <button>Place Order</button>
           <div className="cartList">
             {CartList.map((cartItem, key) => {
               return (
