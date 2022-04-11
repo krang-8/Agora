@@ -161,4 +161,65 @@ app.MapDelete("/delete-User-by-id/{UserId}", async (int UserId) =>
     }
 }).WithTags("Users Endpoints");
 
+app.MapGet("/get-all-Carts", async () => await CartRepository.GetCartsAsync())
+    .WithTags("Carts Endpoints");
+
+app.MapGet("/get-Cart-by-id/{CartId}", async (int CartId) =>
+{
+    Cart CartToReturn = await CartRepository.GetCartByIdAsync(CartId);
+
+    if (CartToReturn != null)
+    {
+        return Results.Ok(CartToReturn);
+
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Carts Endpoints");
+
+app.MapPost("/create-Cart", async (Cart CartToCreate) =>
+{
+    bool createSuccess = await CartRepository.CreateCartAsync(CartToCreate);
+
+    if (createSuccess != null)
+    {
+        return Results.Ok("Created Successfully");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Carts Endpoints");
+
+app.MapPut("/update-Cart", async (Cart CartToUpdate) =>
+{
+    bool updateSuccess = await CartRepository.UpdateCartAsync(CartToUpdate);
+
+    if (updateSuccess != null)
+    {
+        return Results.Ok("Updated Successfully");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Carts Endpoints");
+
+
+app.MapDelete("/delete-Cart-by-id/{CartId}", async (int CartId) =>
+{
+    bool deleteSuccess = await CartRepository.DeleteCartAsync(CartId);
+
+    if (deleteSuccess != null)
+    {
+        return Results.Ok("Deleted Successfully");
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Carts Endpoints");
+
 app.Run();
