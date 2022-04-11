@@ -6,6 +6,7 @@ namespace aspnetserver.Data
     {
         public DbSet<Item>Items { get; set; }
         public DbSet<User>Users { get; set; }
+        public DbSet<Cart>Carts { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) => dbContextOptionsBuilder.UseSqlite("Data Source=./Data/AppDB.db");
@@ -43,6 +44,7 @@ namespace aspnetserver.Data
 
             modelBuilder.Entity<Item>().HasData(data: itemsToSeed);
             modelBuilder.Entity<User>().HasData(data: usersToSeed);
+            modelBuilder.Entity<Cart>();
         }
 
 
