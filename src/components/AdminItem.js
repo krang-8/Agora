@@ -2,6 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function AdminItems({ image, name, itemID, price, stock }) {
+  
+  function deleteItem(itemID){
+
+      fetch(`https://localhost:7235/delete-Item-by-id/${itemID}`,{
+          method:'DELETE',
+          header:{'Accept':'application/json',
+                  'Content-Type':'application/json'}
+      })
+      window.location.reload(false)
+
+  }
+  
   return (
     <div className="adminItem">
       <div>
@@ -22,7 +34,7 @@ function AdminItems({ image, name, itemID, price, stock }) {
             <Link to="/updatestock"><button name={name} type="input">Update Stock</button></Link>
           </div2>
           <div2>
-            <Link to="/removeitem"><button name={name} type="input">Remove Item</button></Link>
+            <button name={name} onClick={() => deleteItem(itemID)} type="input">Remove Item</button>
           </div2>
           </div1>
           

@@ -8,6 +8,7 @@ function CartItem({ image, name, price, quantity }) {
   if(counter<=0) {
     decrementCounter = () => setCounter(1);
   }
+
   return (
     <div className="cartItem">
       <div style={{ backgroundImage: `url(${image})` }}>
@@ -16,7 +17,7 @@ function CartItem({ image, name, price, quantity }) {
       <div>
       <h1> {name} </h1>
         <p> ${price} </p>
-        <p><button type="button" onClick={decrementCounter}>-</button> {counter}<button type="button" onClick={incrementCounter}>+</button></p>
+        <p><button type="button" onClick={decrementCounter}>-</button> {quantity} <button type="button" onClick={incrementCounter}>+</button></p>
       </div>
     </div>
   );
