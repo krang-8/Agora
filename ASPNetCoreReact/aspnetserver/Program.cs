@@ -162,6 +162,27 @@ app.MapDelete("/delete-User-by-id/{UserId}", async (int UserId) =>
     }
 }).WithTags("Users Endpoints");
 
+app.MapGet("/get-seller-items/{sellerID}", async (int sellerID) =>
+{
+    List<Item> allItems = await ItemRepository.GetItemsAsync();
+    List<Item> itemsToReturn = new List<Item>();
+    if (allItems != null)
+    {
+        for (int i = 0; i < allItems.Count; i++)
+        {
+            if (allItems[i].SellerID == sellerID)
+            {
+                itemsToReturn.Add(allItems[i]);
+            }
+        }
+        return Results.Ok(itemsToReturn);
+    }
+    else
+    {
+        return Results.BadRequest();
+    }
+}).WithTags("Items Endpoints");
+
 app.MapGet("/get-all-Carts", async () => await CartRepository.GetCartsAsync())
     .WithTags("Carts Endpoints");
 
@@ -212,19 +233,7 @@ app.MapPost("/create-Cart", async (Cart CartToCreate) =>
     }
 }).WithTags("Carts Endpoints");
 
-app.MapPut("/update-Cart", async (Cart CartToUpdate) =>
-{
-    bool updateSuccess = await CartRepository.UpdateCartAsync(CartToUpdate);
 
-    if (updateSuccess != null)
-    {
-        return Results.Ok("Updated Successfully");
-    }
-    else
-    {
-        return Results.BadRequest();
-    }
-}).WithTags("Carts Endpoints");
 
 
 app.MapDelete("/delete-Cart-by-id/{CartId}", async (int cartId) =>
@@ -327,8 +336,26 @@ app.MapDelete("/delete-Buyer-by-id/{BuyerId}", async (int BuyerId) =>
 
 
 
-app.MapGet("/get-all-Sellers", async () => await SellerRepository.GetSellersAsync())
-    .WithTags("Sellers Endpoints");
+app.MapGet("/get-all-Sellers", async () =>
+{
+    List<Seller> yar = new List<Seller>(await SellerRepository.GetSellersAsync());
+    Dictionary<string, string>[] yar2 = new Dictionary<string, string>[yar.Count];
+
+    for (int i = 0; i < yar.Count; i++)
+    {
+        var getUser = await UserRepository.GetUserByIdAsync(yar[i].UserId);
+        Dictionary<string, string> temp = new Dictionary<string, string>();
+        temp.Add("name", yar[i].name);
+        temp.Add("username", getUser.username);
+        temp.Add("password", getUser.password);
+        temp.Add("SellerId", yar[i].SellerId.ToString());
+        temp.Add("Address", yar[i].Address);
+        yar2[i] = temp;
+    }
+
+    return Results.Ok(yar2);
+
+}).WithTags("Sellers Endpoints");
 
 app.MapGet("/get-Seller-by-id/{SellerId}", async (int SellerId) =>
 {
@@ -403,5 +430,38 @@ app.MapPost("/create-Order", async (Order OrderToCreate) =>
     }
 }).WithTags("Orders Endpoints");
 
+app.MapPost("/buyer-log-in", async (Login userToLogin) =>
+{
+    string username = userToLogin.username;
+    string password = userToLogin.password;
+    User loginSuccess = await UserRepository.GetUserByUsernameAsync(username);
+   
+    if (loginSuccess != null && (password == loginSuccess.password) && (loginSuccess.userType ==1))
+    {
+        return Results.Ok("Login Successful");
+    }
+    else
+    {
+        return Results.Ok("Incorrect Details");
+    }
 
+}).WithTags("Login Endpoint");
+
+app.MapPost("/seller-log-in", async (Login userToLogin) =>
+{
+    string username = userToLogin.username;
+    string password = userToLogin.password;
+
+    User loginSuccess = await UserRepository.GetUserByUsernameAsync(username);
+
+    if (loginSuccess != null && (password == loginSuccess.password) && (loginSuccess.userType == 0))
+    {
+        return Results.Ok("Login Successful");
+    }
+    else
+    {
+        return Results.Ok("Incorrect Details");
+    }
+
+}).WithTags("Login Endpoint");
 app.Run();
