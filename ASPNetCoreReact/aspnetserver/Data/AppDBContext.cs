@@ -64,27 +64,31 @@ namespace aspnetserver.Data
                     };
 
                 }
+
             }
 
-            for (int i = 0; i < 3; i++)
+            for (int f = 0; f < 3; f++)
             {
 
-                buyersToSeed[i ] = new Buyer
+                buyersToSeed[f] = new Buyer
                 {
-                    CartID = i * 1000,
+                    CartID = f * 1000,
                     Address1 = "addy",
                     Address2 = "ta",
                     Address3 = "bhai home",
                     name = "test",
-                    UserId = 2*i + 1 ,
-                    BuyerId = 2*i +1
+                    UserId = 2*f + 1 ,
+                    BuyerId = 2*f +1
                 };
+
             }
             for (int j = 0; j < 3; j++)
             {
+                itemsToSeed[j].SellerID = (j + 1) * 2;
+                itemsToSeed[j+1].SellerID = (j + 1) * 2;
                 sellersToSeed[j ] = new Seller
                 {
-                    Address1 = "addy",
+                    Address = "addy",
                     name = "test",
                     UserId = (j+1) *2,
                     SellerId = (j+1) *2

@@ -198,7 +198,7 @@ namespace aspnetserver.Data.Migrations
                         {
                             ItemID = 1,
                             Description = "This is item 1 and it is very cheap.",
-                            SellerID = 1000,
+                            SellerID = 2,
                             image = "https://www.freelogoservices.com/blog/wp-content/uploads/iStock-458591871.jpg",
                             itemName = "Item 1",
                             itemPrice = 10,
@@ -208,7 +208,7 @@ namespace aspnetserver.Data.Migrations
                         {
                             ItemID = 2,
                             Description = "This is item 2 and it is very cheap.",
-                            SellerID = 2000,
+                            SellerID = 4,
                             image = "https://www.freelogoservices.com/blog/wp-content/uploads/iStock-458591871.jpg",
                             itemName = "Item 2",
                             itemPrice = 20,
@@ -218,7 +218,7 @@ namespace aspnetserver.Data.Migrations
                         {
                             ItemID = 3,
                             Description = "This is item 3 and it is very cheap.",
-                            SellerID = 3000,
+                            SellerID = 6,
                             image = "https://www.freelogoservices.com/blog/wp-content/uploads/iStock-458591871.jpg",
                             itemName = "Item 3",
                             itemPrice = 30,
@@ -228,7 +228,7 @@ namespace aspnetserver.Data.Migrations
                         {
                             ItemID = 4,
                             Description = "This is item 4 and it is very cheap.",
-                            SellerID = 4000,
+                            SellerID = 6,
                             image = "https://www.freelogoservices.com/blog/wp-content/uploads/iStock-458591871.jpg",
                             itemName = "Item 4",
                             itemPrice = 40,
@@ -287,7 +287,7 @@ namespace aspnetserver.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Address1")
+                    b.Property<string>("Address")
                         .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("TEXT");
@@ -309,21 +309,21 @@ namespace aspnetserver.Data.Migrations
                         new
                         {
                             SellerId = 2,
-                            Address1 = "addy",
+                            Address = "addy",
                             UserId = 2,
                             name = "test"
                         },
                         new
                         {
                             SellerId = 4,
-                            Address1 = "addy",
+                            Address = "addy",
                             UserId = 4,
                             name = "test"
                         },
                         new
                         {
                             SellerId = 6,
-                            Address1 = "addy",
+                            Address = "addy",
                             UserId = 6,
                             name = "test"
                         });

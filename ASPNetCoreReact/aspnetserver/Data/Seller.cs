@@ -18,7 +18,7 @@ namespace aspnetserver.Data
 
         [Required]
         [MaxLength(1000)]
-        public string Address1 { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
     }
 

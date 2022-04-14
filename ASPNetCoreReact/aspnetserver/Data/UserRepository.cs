@@ -23,6 +23,15 @@ namespace aspnetserver.Data
             }
         }
 
+        internal async static Task<User> GetUserByUsernameAsync(string username)
+        {
+            using (var db = new AppDBContext())
+            {
+                return await db.Users
+                    .FirstOrDefaultAsync(user => user.username == username);
+            }
+        }
+
         internal async static Task<bool> CreateUserAsync(User UserToCreate)
         {
             using (var db = new AppDBContext())
