@@ -59,6 +59,9 @@
   margin-left: 20px;
 }
 
+
+
+
 @media only screen and (max-width: 1300px) {
   .cartList {
     grid-template-columns: 1fr 1fr;
@@ -70,7 +73,10 @@
   width: 40px;
 
 }
-
+.cartItem #btn{
+  margin-left: 5px;
+  width: 150px;
+}
 @media only screen and (max-width: 800px) {
   .cartList {
     grid-template-columns: 1fr;

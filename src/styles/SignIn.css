@@ -70,6 +70,7 @@ form label {
 
 form button {
   margin-top: 40px;
+  margin-left:15px;
   width: 140px;
   height: 40px;
   border: none;

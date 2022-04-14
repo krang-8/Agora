@@ -39,7 +39,6 @@ function AdminCustomerItem({ name, username, password, BuyerID, Address, Cart, C
             <div1>
                 {/* <div1><button>Change Password</button></div1> */}
                 <div1><button onClick={() => deleteBuyer(BuyerID, Cart)}>Delete Account</button></div1>
-                <div1><button>Update Account</button></div1>
                 
             </div1>
 

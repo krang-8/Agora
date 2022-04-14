@@ -1,34 +1,39 @@
 import React from 'react'
-import { ItemList } from "../helpers/AdminItemList";
-import "../styles/Admin.css";
+import { Link } from 'react-router-dom';
+import "../styles/AdminSeller.css";
+import { useState, useEffect } from "react";
+import AdminSellerItem from '../components/AdminSellerItem';
 
 function AdminSeller() {
+  const [status, setStatus] = useState('');
+  const [list, setList] = useState([]);
+  useEffect(()=>{
+     setStatus('Loading');
+     fetch('https://localhost:7235/get-all-Sellers')
+       .then(response => response.json())
+       .then(setList)
+       .then(()=>setStatus('Success'))
+       .catch(()=>setStatus('Error'));
+   }, []);
   return (
-    <div className="adminItem">
-        {/* <div>
-          <div style={{ backgroundImage: `url(${image})` }}>
-          </div>
-          <div >
-            <div1>
-              <p> Name: {name} </p>
-              <p> ItemID: {itemID}</p>
-              <p> Price:  ${price} </p>
-              <p> Stock: {stock} </p>
-            </div1>
-            <div1>
-              <div2>
-                <Link to="/updateitem"><button name={name} type="submit">Update Item</button></Link>
-              </div2>
-              <div2>
-                <Link to="/updatestock"><button name={name} type="input">Update Stock</button></Link>
-              </div2>
-              <div2>
-                <Link to="/removeitem"><button name={name} type="input">Remove Item</button></Link>
-              </div2>
-            </div1>
-          </div>
-        </div> */}
+    <div className="AdminSeller">
+      <h1 className="AdminSellerTitle">Admin - Seller </h1>  
+      <Link to="/admin"><button >Return to main</button></Link> 
+      <div className="AdminSellerList">
+        {list.map((AdminSeller, key) => {
+          return (
+            <AdminSellerItem
+              key={key}
+              name={AdminSeller.name}
+              username={AdminSeller.username}
+              password={AdminSeller.password}
+              Address={AdminSeller.Address}
+              SellerId={AdminSeller.SellerId}
+            />
+          );
+        })}
       </div>
+    </div>
   )
 }
 
